@@ -5,18 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DC</title>
         <style>
-        body {   
+            .fondo-uno{
+                background-image: url("imagenes de proyecto/DC/superVillanoscollab.avif");
+                background-size: cover;
+                height: 500px;
+                color: white;
+                filter: blur(2px);
+                
+            }
+            .fondo-dos{
+                background-color: white;
+                background-size: cover;
+                height: 500px;
+                border: 1px solid #ccc;
+            }
 
-            background-image: url("imagenes de proyecto/2iZC3k.jpg");
-            background-size: cover;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            color: rgb(255, 0, 0);
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
     </style>
 </head>
 <body>
+    <nav><img style="text-align: center;" src="imagenes de proyecto/lego-logo.png" 
+            alt="Lego" 
+            width="35" height="30"
+            title="lego"/></nav>
+
+    <div class="fondo-uno"></div>
+    <div>
+    </div>
+
+    <div class="borde h1"> <h1 style="text-align: right;">
+                Las mejores figuras del <br>
+                universo DC a tu elección<hr>
+
+                
+                <h4 style="text-align: right;">Inicia sesion</h4>
+                <form style="text-align: right; border: 10px;" action="/action_page.php">
+                    <label for="fname">Nombre y Apellido:</label><br>
+                    <input type="text" id="fname" name="fname" value="Ej: John Miranda"><br>
+
+                    <label for="lname">email:</label><br>
+                    <input type="text" id="lname" name="lname" value="Ej: Example@gmail.com"><br><br>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            
+            
+            </h1></div>
+
+    <div class="fondo-dos">Contenido 2</div>
+
     </body>
 </html>

@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet"  href="santiago.css">    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>decoracion</title>
+
+    <title>Decoración</title>
+
+    <link rel="stylesheet" href="santiago.css">
+
     <style>
-        body {   
+
+        body {
             background-image: url("imagenes de proyecto/lego-2kxpsjgvgsr1lyzl.jpg");
             background-size: cover;
             background-attachment: fixed;
@@ -15,76 +19,156 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
+
+        .oscuro {
+            background-color: black;
+            color: white;
+        }
+
+        .precio {
+            font-weight: bold;
+        }
+
     </style>
 </head>
+
 <body>
+
     <h1>DECORACION</h1>
     <h2>CATALOGO:</h2>
-    <table width="100%" class="sombra">
+
+    <button onclick="cambiarModo()">
+        Cambiar modo
+    </button>
+
+    <h3 id="reloj"></h3>
+
+    <table width="100%" class="sombra" border="1">
+
         <thead>
-            <th >producto 1</th>
-            <th >producto 2</th>
-            <th >producto 3</th>
-            <th >producto 4</th>
-            <th >producto 5</th>
-        </thead>
-            <tbody>
             <tr>
-            <td>castillo de disney</td>
-            <td>estatua de la livertad</td>
-            <td>coliceo romano</td>
-            <td>ramo de flores</td>
-            <td>calavera de ramo</td>
-        </tr>
-        <tr class="negro">
-            <td>
-                <img src="imagenes de proyecto/43222_1000x1000.webp" width="200" height="200">
-            </td>
-            <td>
-                <img src="imagenes de proyecto/img_14503.webp" width="200" height="200">
-            </td>
-            <td>
-                <img src="imagenes de proyecto/D_Q_NP_2X_672332-CBT108684499741_032026-P.webp" width="200" height="200">
-            </td>
-            <td>
-                <img src="imagenes de proyecto/LEGO_Icons_Ramo_de_Rosas_10328_Colecci_n_Botanical_para_Adultos_384x384.webp" width="200" height="200">
-            </td>
-            <td>
-                <img src="imagenes de proyecto/s-l1200.jpg" width="200" height="200">
-            </td>
-        </tr>
+                <th>Producto 1</th>
+                <th>Producto 2</th>
+                <th>Producto 3</th>
+                <th>Producto 4</th>
+                <th>Producto 5</th>
+            </tr>
+        </thead>
 
-<tr>
-    <td class="precio">
-        $100.000 COP <br>
-        <span class="oferta">
-    </td>
+        <tbody>
 
-    <td class="precio">
-        $600.000 COP <br>
-        <span class="nuevo">
-    </td>
+            <tr>
+                <td>Castillo de Disney</td>
+                <td>Estatua de la Libertad</td>
+                <td>Coliseo Romano</td>
+                <td>Ramo de Flores</td>
+                <td>Calavera de Ramo</td>
+            </tr>
 
-    <td class="precio">
-        $950.000 COP
-    </td>
+            <tr class="negro">
 
-    <td class="precio">
-        $1.000.000 COP
-    </td>
+                <td>
+                    <img src="imagenes de proyecto/43222_1000x1000.webp"
+                    width="200" height="200">
+                </td>
 
-    <td class="precio">
-        $350.000 COP
-    </td>
-</tr>
-    </tbody>
+                <td>
+                    <img src="imagenes de proyecto/img_14503.webp"
+                    width="200" height="200">
+                </td>
+
+                <td>
+                    <img src="imagenes de proyecto/D_Q_NP_2X_672332-CBT108684499741_032026-P.webp"
+                    width="200" height="200">
+                </td>
+
+                <td>
+                    <img src="imagenes de proyecto/LEGO_Icons_Ramo_de_Rosas_10328_Colecci_n_Botanical_para_Adultos_384x384.webp"
+                    width="200" height="200">
+                </td>
+
+                <td>
+                    <img src="imagenes de proyecto/s-l1200.jpg"
+                    width="200" height="200">
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td class="precio">
+                    $100.000 COP
+                    <button onclick="comprar('Figura de CR7')">
+                        Comprar
+                    </button>
+                </td>
+
+                <td class="precio">
+                    $600.000 COP
+                    <button onclick="comprar('Figura de CR7')">
+                        Comprar
+                    </button>
+                </td>
+
+                <td class="precio">
+                    $950.000 COP
+                    <button onclick="comprar('Figura de CR7')">
+                        Comprar
+                    </button>
+                </td>
+
+                <td class="precio">
+                    $1.000.000 COP
+                    <button onclick="comprar('Figura de CR7')">
+                        Comprar
+                    </button>
+                </td>
+
+                <td class="precio">
+                    $350.000 COP
+                    <button onclick="comprar('Figura de CR7')">
+                        Comprar
+                    </button>
+                </td>
+
+            </tr>
+
+        </tbody>
+
     </table>
-        <ul>
-        <il class="des">
-            <a style="color: rgb(0, 102, 255);" href="index.html">volver al menu principal</a>
-        </il>
+
+    <ul>
+        <li class="des">
+            <a style="color: rgb(0, 102, 255);" href="index.html">
+                Volver al menú principal
+            </a>
+        </li>
     </ul>
 
-    </body>
-</html>
+    <script>
 
+        window.onload = function () {
+            alert("Estas en la tienda de docoración de hogar de Lego");
+        }
+
+        // MODO OSCURO
+        function cambiarModo() {
+            document.body.classList.toggle("oscuro");
+        }
+
+        // RELOJ
+        function actualizarReloj() {
+
+            let fecha = new Date();
+
+            document.getElementById("reloj").innerHTML =
+                " Hora actual: " + fecha.toLocaleTimeString();
+        }
+
+        // ACTUALIZA CADA SEGUNDO
+        setInterval(actualizarReloj, 1000);
+
+    </script>
+
+</body>
+</html>

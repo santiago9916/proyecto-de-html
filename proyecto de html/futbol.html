@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <link rel="stylesheet"  href="santiago.css"> 
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title class="sombra">futbol</title>
-        <style>
-        body {   
 
+    <title>Futbol</title>
+
+    <link rel="stylesheet" href="santiago.css">
+
+    <style>
+
+        body {
             background-image: url("imagenes de proyecto/snnvvsho13zb1.jpg");
             background-size: cover;
             background-attachment: fixed;
@@ -16,93 +20,221 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
+
+        table {
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 10px;
+        }
+
+        .producto {
+            padding: 10px;
+        }
+
+        .precio {
+            font-size: 20px;
+            color: yellow;
+        }
+
+        .oferta {
+            color: lime;
+            font-weight: bold;
+        }
+
+        .nuevo {
+            color: cyan;
+            font-weight: bold;
+        }
+
+        img {
+            transition: transform 0.3s;
+            border-radius: 10px;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        .oscuro {
+            background-color: black;
+            color: white;
+        }
+
+        input {
+            padding: 10px;
+            width: 300px;
+            border-radius: 10px;
+            border: none;
+        }
+
     </style>
+
 </head>
+
 <body>
-        <h1>FUTBOL</h1>
+
+    <h1> FUTBOL </h1>
+
+    <button onclick="cambiarModo()">Cambiar modo</button>
+
+    <h3 id="reloj"></h3>
+
+    <p id="contador"></p>
+
+    <br>
+
+    <input type="text" id="buscador" placeholder="Buscar producto...">
+
     <h2>CATALOGO:</h2>
-    <table  class="sombra" width="100%" >
+
+    <table width="100%" border="1">
+
         <thead>
-        <th  class="producto">producto 1</th>
-        <th  class="producto">producto 2</th>
-        <th  class="producto">producto 3</th>
-        <th  class="producto">producto 4</th>
-        <th  class="producto">producto 5</th>
+
+            <tr>
+                <th class="producto">Producto 1</th>
+                <th class="producto">Producto 2</th>
+                <th class="producto">Producto 3</th>
+                <th class="producto">Producto 4</th>
+                <th class="producto">Producto 5</th>
+            </tr>
+
         </thead>
-            <tbody>
-<tr>
-    <td class="producto">
-        Copa Mundial <br>
-        <small>Edición oficial</small>
-    </td>
 
-    <td class="producto destacado">
-        Figura de Messi <br>
-        <small>Jugador histórico</small>
-    </td>
+        <tbody>
 
-    <td class="producto">
-        Figura de CR7 <br>
-        <small>Edición especial</small>
-    </td>
+            <tr>
 
-    <td class="producto">
-        Balón de Lego <br>
-        <small>Para colección</small>
-    </td>
+                <td class="producto">
+                    Copa Mundial <br>
+                    <small>Edición oficial</small><br><br>
 
-    <td class="producto">
-        🏟️ Estadio <br>
-        <small>Modelo miniatura</small>
-    </td>
-</tr>
-        <tr class="negro">
-            <td>
-                <img src="imagenes de proyecto/43020_384x384.webp" width="200" height="200">
-            </td>
-            <td>
-                <img src="imagenes de proyecto/blt66b06d25e176c52b-43011_Prod.png" width="200" height="200">
-            </td>
-            <td>
-                <img src="imagenes de proyecto/D_Q_NP_2X_740422-MCO110026532929_042026-T.webp" width="200" height="200">
-            </td>
-            <td>
-                <img src="imagenes de proyecto/D_Q_NP_2X_973999-MLA105594971034_012026-T.webp" width="200" height="200">
-            </td>
-            <td>
-                <img src="imagenes de proyecto/D_Q_NP_2X_993529-MCO97415394142_112025-T.webp" width="200" height="200">
-            </td>
-        </tr>
+                    <img src="imagenes de proyecto/43020_384x384.webp" width="200" height="200">
 
-<tr>
-    <td class="precio">
-        $1.500.000 COP <br>
-        <span class="oferta">
-    </td>
+                    <p class="precio">
+                        $1.500.000 COP <br>
+                        
+                    </p>
 
-    <td class="precio">
-        $200.000 COP <br>
-        <span class="nuevo">
-    </td>
+                    <button onclick="comprar('Copa Mundial')">
+                        Comprar
+                    </button>
 
-    <td class="precio">
-        $250.000 COP
-    </td>
+                </td>
 
-    <td class="precio">
-        $300.000 COP
-    </td>
+                <td class="producto">
+                    Figura de Messi <br>
+                    <small>Jugador histórico</small><br><br>
 
-    <td class="precio">
-        $350.000 COP
-    </td>
-</tr>
-    </tbody>
+                    <img src="imagenes de proyecto/blt66b06d25e176c52b-43011_Prod.png" width="200" height="200">
+
+                    <p class="precio">
+                        $200.000 COP <br>
+                       
+                    </p>
+
+                    <button onclick="comprar('Figura de Messi')">
+                        Comprar
+                    </button>
+
+                </td>
+
+                <td class="producto">
+                    Figura de CR7 <br>
+                    <small>Edición especial</small><br><br>
+
+                    <img src="imagenes de proyecto/D_Q_NP_2X_740422-MCO110026532929_042026-T.webp" width="200" height="200">
+
+                    <p class="precio">
+                        $250.000 COP
+                    </p>
+
+                    <button onclick="comprar('Figura de CR7')">
+                        Comprar
+                    </button>
+
+                </td>
+
+                <td class="producto">
+                    Balón de Lego <br>
+                    <small>Para colección</small><br><br>
+
+                    <img src="imagenes de proyecto/D_Q_NP_2X_973999-MLA105594971034_012026-T.webp" width="200" height="200">
+
+                    <p class="precio">
+                        $300.000 COP
+                    </p>
+
+                    <button onclick="comprar('Balón de Lego')">
+                        Comprar
+                    </button>
+
+                </td>
+
+                <td class="producto">
+                     Estadio <br>
+                    <small>Modelo miniatura</small><br><br>
+
+                    <img src="imagenes de proyecto/D_Q_NP_2X_993529-MCO97415394142_112025-T.webp" width="200" height="200">
+
+                    <p class="precio">
+                        $350.000 COP
+                    </p>
+
+                    <button onclick="comprar('Estadio')">
+                        Comprar
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
     </table>
-    <ul>
-        <il class="des">
-            <a style="color: rgb(0, 102, 255);"href="index.html">volver al menu principal</a>
-        </il>
-    </ul>
-    </body>
+
+  
+    <br>
+
+    <a style="color: rgb(0, 102, 255);" href="index.html">
+        Volver al menú principal
+    </a>
+
+    <script>
+
+        window.onload = function() {
+            alert(" estas en el catalogo de fútbol ");
+        }
+
+        // MODO OSCURO
+        function cambiarModo() {
+            document.body.classList.toggle("oscuro");
+        }
+
+        // RELOJ
+        function actualizarReloj() {
+
+            let fecha = new Date();
+
+            document.getElementById("reloj").innerHTML =
+                " Hora actual: " + fecha.toLocaleTimeString();
+
+        }
+//actualizar el reloj cada segundo 
+        setInterval(actualizarReloj, 1000);
+    </script>
+
+</body>
 </html>

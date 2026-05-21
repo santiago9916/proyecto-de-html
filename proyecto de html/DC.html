@@ -14,35 +14,135 @@
     <section class="hero">
         <div class="blur-background"></div>
 
-        <div class="herp-content">
-            
-            Las mejores Figuritas del <br>
+        <div class="hero-content">
+            <h1 class="main-heading"> 
+                Las mejores Figuritas del <br>
             universo DC a tu eleccion
             <hr class="custom-hr">
+            </h1>
         </div>
+    </section> 
+    <div class="fondo-dos"> Nuestro catalogo:
+        <div class="contenido-dos p">
+            <table width="100%" border="1">
 
-    </section>
+        <thead>
+            <tr>
+                <th class="producto">Articulo 1</th>
+                <th class="producto">Articulo 2</th>
+                <th class="producto">Articulo 3</th>
+                <th class="producto">Articulo 4</th>
+                <th class="producto">Articulo 5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="producto">
+                    Kit Lego Batimovil
+                    <small>Edición oficial</small><br><br>
 
-    <div class="borde h1"> <h1 style="text-align: right;">
-                Las mejores figuras del <br>
-                universo DC a tu elección<hr>
+                    <img src="imagenes de proyecto/Lego De batman.webp" width="200" height="200">
 
+                    <p class="precio">
+                        $1.000.000 COP <br>
+                        
+                    </p>
+
+                    <button onclick="comprar('Lego Batimovil')">
+                        Comprar
+                    </button>
+
+                </td>
+                <td class="producto">
+                    Kit lego SuperMan <br>
+                    <small>El hombre de acero</small><br><br>
+
+                    <img src="imagenes de proyecto/Lego De Superman.jpg" width="200" height="200">
+
+                    <p class="precio">
+                        $800.000 COP <br>
+                       
+                    </p>
+
+                    <button onclick="comprar('Kit lego SuperMan')">
+                        Comprar
+                    </button>
+
+                </td>
+
+                <td class="producto">
+                    Figura de Flash <br>
+                    <small>Con super velocidad</small><br><br>
+
+                    <img src="imagenes de proyecto/Lego De Flash.avif" width="200" height="200">
+
+                    <p class="precio">
+                        $350.000 COP
+                    </p>
+
+                    <button onclick="comprar('Figura de Flash')">
+                        Comprar
+                    </button>
+
+                </td>
+
+                <td class="producto">
+                    Coleccion House<br>
+                    <small>Los mas malvados</small><br><br>
+
+                    <img src="imagenes de proyecto/Lego Universo Dc.webp" width="200" height="200">
+
+                    <p class="precio">
+                        $1.000.000 COP
+                    </p>
+
+                    <button onclick="comprar('Coleccion House')">
+                        Comprar
+                    </button>
+
+                </td>
+
+                <td class="producto">
+                    Palacio de los vilanos <br>
+                    <small>Modelo completo</small><br><br>
+
+                    <img src="imagenes de proyecto/lego Villanos.jpg" width="200" height="200">
+                    <p class="precio">
+                        $700.000 COP
+                    </p>
+
+                    <button onclick="comprar(' Palacio de los vilanos')">
+                        Comprar
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+        </div>
+        
+        
+    </div>
+
+    <h4 class="login-title">Inicia sesión con tu cuenta lego</h4>
+            
+    <!-- Formulario -->
+    <form action="/action_page.php" method="post" class="login-form">
+    <div class="form-group">
+        <label for="fullname">Nombre y Apellido:</label>
+        <input type="text" id="fullname" name="fullname" value="Ej: Juan Perez">
+    </div>
                 
-                <h4 style="text-align: right;">Inicia sesion</h4>
-                <form style="text-align: right; border: 10px;" action="/action_page.php">
-                    <label for="fname">Nombre y Apellido:</label><br>
-                    <input type="text" id="fname" name="fname" value="Ej: John Miranda"><br>
-
-                    <label for="lname">email:</label><br>
-                    <input type="text" id="lname" name="lname" value="Ej: Example@gmail.com"><br><br>
-
-                    <button type="submit">Enviar</button>
-                </form>
-            
-            
-            </h1></div>
-
-    <div class="fondo-dos">Contenido 2</div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="Ej: Lego@gmail.com">
+    </div>
+        <button type="submit" class="submit-btn">Enviar</button>
+    </form>
+    </div>
 
     </body>
 </html>

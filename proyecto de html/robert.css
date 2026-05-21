@@ -1,71 +1,268 @@
-*{
+/* ========== RESET Y ESTILOS BASE ========== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color:  #0a0a0a;
+body {
+    font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    background-color: #0a0a0a;   /* fondo neutro por si asoma algo */
 }
 
-/* Barra de navegacion*/
-nav{
-background-color: red;
-width: 100%; 
-padding: 8px 24px;
-display: flex;
-align-items: center;
-justify-content: flex-start ;
-box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-
-/* css del logo de la esquina izquierda */
-.logo-nav{
-    width: auto;
-    height: 30px;
-    max-width: 100px;
-    display: block;
-    object-fit: contain;
-}
-
-.hero{
-    position: relative;
+/* ========== BARRA DE NAVEGACIÓN: FONDO ROJO COMPLETO, LOGO PEQUEÑO ========== */
+.navbar {
+    background-color: #e60000;     /* rojo intenso en toda la línea horizontal */
     width: 100%;
-    height: 500px;
+    padding: 8px 24px;
     display: flex;
     align-items: center;
-
+    justify-content: flex-start;    /* logo pegado a la izquierda (esquina arriba) */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
-.hero-content{
+
+/* Logo pequeño en la esquina superior izquierda */
+.logo-nav {
+    width: auto;
+    height: 48px;          /* tamaño reducido pero proporcionado */
+    max-width: 120px;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.logo-nav:hover {
+    transform: scale(1.02);
+}
+
+/* ========== SECCIÓN HERO: IMAGEN BORROSA + TEXTO NÍTIDO (sobrepuesto) ========== */
+.hero {
     position: relative;
+}
+.hero::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    max-width: 680px;
-    margin-left: auto;
-    margin-right: 5%;
-    background-color: transparent;
-    text-align: right;
-    color: #ffffff;
-    backdrop-filter: blur(opx);
-    border-radius: 12px;
-
+    height: 80px;          /* altura consistente con el antiguo .fondo-uno */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0), #7a3b1e
+    );
 }
 
-.blur-background{
+/* Capa de fondo con imagen + desenfoque (único elemento borroso) */
+.blur-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("imagenes de proyecto/thumb-1920-806420.jpg");
+    background-image: url('imagenes de proyecto/thumb-1920-806420.jpg');
     background-size: cover;
-    background-position: 30%;
-    filter: blur(2px);
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    filter: blur(2px);           /* solo el fondo se ve borroso, como pedías */
+    z-index: 0;
+    transform: scale(1.02);      /* pequeña corrección para evitar bordes blancos por blur */
 }
 
-.fondo-dos{
-background-color: brown;
-background-size: cover;
-height: 500px;
-border: 1px solid #ccc;
+/* Contenedor del texto (sin blur, completamente nítido, sobrepuesto al fondo) */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 680px;
+    margin-left: auto;           /* empuja el contenido hacia la derecha (text-align: right) */
+    margin-right: 5%;
+    padding: 2rem 2rem 2rem 1rem;
+    background-color: transparent;  /* sin fondo extra, solo texto sobre la imagen */
+    text-align: right;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.65);  /* mejora legibilidad sin afectar nitidez */
+    backdrop-filter: blur(0px);   /* explícito: nada de blur en el texto */
+    border-radius: 12px;
+}
+
+/* Título principal */
+.main-heading {
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+/* Línea decorativa (hr) personalizada */
+.custom-hr {
+    margin: 1rem 0 1.2rem 0;
+    border: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ffc107, #ff5733, #ffffff);
+    width: 85%;
+    margin-left: auto;           /* alineado a la derecha para mantener armonía */
+    border-radius: 4px;
+}
+
+/* Título del formulario */
+.login-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin: 1.2rem 0 0.8rem 0;
+    color: #fff3e0;
+    letter-spacing: 0.5px;
+}
+
+/* ========== ESTILOS DEL FORMULARIO (nítido, sin herencia de blur) ========== */
+.login-form {
+    margin-top: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    color: #f5e7d9;
+    letter-spacing: 0.3px;
+}
+
+.form-group input {
+    width: 100%;
+    max-width: 320px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.92);
+    font-size: 0.9rem;
+    color: #1e1e2a;
+    transition: all 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.form-group input:focus {
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 0 2px #ffb347;
+}
+
+/* Botón de envío */
+.submit-btn {
+    background-color: #912b2b;
+    border: none;
+    padding: 8px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.submit-btn:hover {
+    background-color: #c41e1e;
+    transform: scale(0.98);
+}
+
+.submit-btn:active {
+    transform: scale(0.96);
+}
+
+/* ========== SEGUNDO FONDO: fondo-dos (color marrón, separador visual) ========== */
+.fondo-dos {
+    background-color: rgb(168, 66, 66);   /* marrón robusto */
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    border-top: 1px solid #d9a066;
+    border-bottom: 1px solid #5e2c12;
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #f7e5c2;
+    letter-spacing: 1px;
+}
+
+.contenido-dos p {
+    background-color: rgba(0,0,0,0.25);
+    padding: 1rem 2rem;
+    border-radius: 60px;
+    backdrop-filter: brightness(0.95);
+    font-size: 1.3rem;
+}
+
+/* ========== AJUSTES RESPONSIVOS ========== */
+@media (max-width: 780px) {
+    .hero {
+        height: auto;
+        min-height: 520px;
+        justify-content: center;
+    }
+    
+    .hero-content {
+        margin-right: 0;
+        margin-left: 0;
+        width: 90%;
+        text-align: center;
+        padding: 1.6rem;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 28px;
+        backdrop-filter: blur(0px);
+    }
+    
+    .custom-hr {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+    
+    .form-group input {
+        max-width: 100%;
+    }
+    
+    .main-heading {
+        font-size: 1.7rem;
+    }
+    
+    .login-title {
+        font-size: 1.4rem;
+    }
+    
+    .fondo-dos {
+        height: 380px;
+        font-size: 1.2rem;
+    }
+    
+    .logo-nav {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        width: 95%;
+        padding: 1.2rem;
+    }
+    
+    .main-heading {
+        font-size: 1.4rem;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        max-width: 220px;
+    }
+    
+    .fondo-dos {
+        height: 300px;
+    }
 }
